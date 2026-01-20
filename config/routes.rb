@@ -4,6 +4,7 @@ Rails.application.routes.draw do
       post "login", to: "auth#create"
       delete :logout, to: "sessions#destroy"
       get "me", to: "users#me"
+      resources :subtracks
     end
   end
 end

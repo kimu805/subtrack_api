@@ -11,8 +11,7 @@ module Authenticatable
   def authenticate_user!
     return if current_user
 
-    render json: { error: "Unauthorized" }, status: :unauthorized
-    throw :abort
+    render json: { error: "Unauthorized" }, status: :unauthorized and return
   end
 
   def current_user
